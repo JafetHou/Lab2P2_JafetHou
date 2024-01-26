@@ -192,16 +192,16 @@ public class Lab2P2_JafetHou {
             case 2:{
                 
                 System.out.println("Ingrese el titulo: ");
-                String titulo = leer.nextLine();
+                String titulo = scanner.nextLine();
                 
                 System.out.println("Ingrese autor: ");
                 String autor = scanner.nextLine();
                 
                 System.out.println("Ingrese tema del articulo: ");
-                String tema = leer.nextLine();
+                String tema = scanner.nextLine();
                 
                 System.out.println("Ingrese la fecha de publicacion: ");
-                String fecha = lea.nextLine();
+                String fecha = scanner.nextLine();
                 
                 biblioteca.add((Articulo) new Articulo(titulo, autor, tema, fecha, "si"));
                 
@@ -210,7 +210,7 @@ public class Lab2P2_JafetHou {
             case 3:{
                 
                 System.out.println("Ingrese el titulo: ");
-                String titulo = leer.nextLine();
+                String titulo = scanner.nextLine();
                 
                 System.out.println("Ingrese el instructor: ");
                 String instructor = scanner.nextLine();
@@ -219,7 +219,7 @@ public class Lab2P2_JafetHou {
                 int semanas = leer.nextInt();
                 
                 System.out.println("Ingrese la plataforma de ensenanza: ");
-                String plataforma = lea.nextLine();
+                String plataforma = scanner.nextLine();
                 
                 biblioteca.add((Cursos) new Cursos(titulo, instructor, semanas, plataforma));
                 
@@ -228,19 +228,19 @@ public class Lab2P2_JafetHou {
             case 4:{
                 
                 System.out.println("Ingrese el titulo: ");
-                String titulo = leer.nextLine();
+                String titulo = scanner.nextLine();
                 
                 System.out.println("Ingrese el conferensista: ");
                 String conferensista = scanner.nextLine();
                 
                 System.out.println("Ingrese la fecha de conferencia: ");
-                String fecha = leer.nextLine();
+                String fecha = scanner.nextLine();
                 
                 System.out.println("Ingrese la duracion: ");
                 String duracion = scanner.nextLine();
                 
                 System.out.println("Ingrese el enlace de accesso: ");
-                String enlace = lea.nextLine();
+                String enlace = scanner.nextLine();
                 
                 biblioteca.add((Conferencia) new Conferencia(titulo, conferensista, fecha, duracion, enlace));
                 
