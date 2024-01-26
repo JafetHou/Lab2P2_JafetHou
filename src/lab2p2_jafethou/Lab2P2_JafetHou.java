@@ -36,6 +36,7 @@ public class Lab2P2_JafetHou {
 
                     break;
                 }
+                
                 case 1:{
 
                     System.out.println("--Menu de Estudiante--");
@@ -54,11 +55,14 @@ public class Lab2P2_JafetHou {
                         TipoUsuario = login(usuario,tipo);
                         
                     }else{
+                        
                         seguir = false;
+                        
                     }
                     
                     break;
                 }
+                
                 case 2:{
                     
                     System.out.println("--Menu de Professor--");
@@ -119,7 +123,7 @@ public class Lab2P2_JafetHou {
                             break;
                         }
                         case 3:{
-                            
+                            eliminar(biblioteca);
                             break;
                         }
                         case 4:{
@@ -256,6 +260,23 @@ public class Lab2P2_JafetHou {
             
         }
         
+    }
+    public static void eliminar(ArrayList <Object> biblioteca){
+        int i =1;
+        for (Object s : biblioteca) {
+            
+            System.out.println(i+") "+s.toString());
+            i=i+1;
+        }
+        System.out.println("Ingrese el numero del Libro, Articulo, Curso en linea, o Conferencia virtual a eliminar: ");
+        int num = lea.nextInt();
+
+        if(num < biblioteca.size()){
+            
+            biblioteca.remove(num-1);
+            System.out.println(" eliminado de la biblioteca");
+
+        }
     }
     
     
