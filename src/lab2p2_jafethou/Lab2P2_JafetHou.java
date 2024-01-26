@@ -20,6 +20,8 @@ public class Lab2P2_JafetHou {
         usuario.add(new accesso("hou","Hou1975",1));
         usuario.add(new accesso("profe","profex10",2));
         usuario.add(new accesso("jose","contra1234",3));
+        // creacion de usuarios (sin registrar[0], estudiante[1], professor[2], bibliotecario[3])
+        
         
         boolean seguir = true;
         
@@ -149,6 +151,7 @@ public class Lab2P2_JafetHou {
     }
     public static int login(ArrayList <accesso> usuario, int tipo) throws ParseException{
         
+        System.out.println("\n--- LOGIN ---");
         System.out.println("Ingrese su usuario: ");
         String user = leer.next();
         
@@ -161,7 +164,7 @@ public class Lab2P2_JafetHou {
                     tipo = k.getTipo();
                 }
             }
-        }
+        }// Login del sistema biblioteca
         
         return tipo;
     }
@@ -258,7 +261,7 @@ public class Lab2P2_JafetHou {
             
             System.out.println(s.toString());
             
-        }
+        }// lista de todos los recursos existentes
         
     }
     public static void eliminar(ArrayList <Object> biblioteca){
@@ -276,16 +279,20 @@ public class Lab2P2_JafetHou {
             biblioteca.remove(num-1);
             System.out.println(" eliminado de la biblioteca");
 
-        }
+        }// eliminar por indice de recurso 
     }
     public static void modificar(ArrayList <Object> biblioteca){
         
+        // modifica todo el recurso seleccionado con el indice y lo cambia al nuevo recurso
+        
         int i =1;
+        
         for (Object s : biblioteca) {
             
             System.out.println(i+") "+s.toString());
             i=i+1;
         }
+        
         System.out.println("Ingrese el numero del Libro, Articulo, Curso en linea, o Conferencia virtual a modificar: ");
         int num = lea.nextInt();
 
@@ -304,7 +311,10 @@ public class Lab2P2_JafetHou {
                 System.out.println("Ingrese anio de publicacion: ");
                 int anio = lea.nextInt();
                 
-                biblioteca.set(num-1, (Libro) new Libro(titulo, autor, genero, anio, "si"));
+                System.out.println("Ingrese la disponibilidad [si/no]: ");
+                String dispo = scanner.nextLine();
+                
+                biblioteca.set(num-1, (Libro) new Libro(titulo, autor, genero, anio, dispo));
                 
             }else if(biblioteca.get(num-1) instanceof Articulo){
                 
@@ -320,7 +330,10 @@ public class Lab2P2_JafetHou {
                 System.out.println("Ingrese la fecha de publicacion: ");
                 String fecha = scanner.nextLine();
                 
-                biblioteca.set(num-1,(Articulo) new Articulo(titulo, autor, tema, fecha, "si"));
+                System.out.println("Ingrese el accesso en linea [si/no]: ");
+                String dispo = scanner.nextLine();
+                
+                biblioteca.set(num-1,(Articulo) new Articulo(titulo, autor, tema, fecha, dispo));
                 
             }else if(biblioteca.get(num-1) instanceof Cursos){
                 
@@ -358,7 +371,6 @@ public class Lab2P2_JafetHou {
                 biblioteca.set(num-1,(Conferencia) new Conferencia(titulo, conferensista, fecha, duracion, enlace));
                 
             }
-            System.out.println("Ingrese que desea modificar: ");
 
         }
         
