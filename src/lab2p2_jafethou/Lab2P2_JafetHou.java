@@ -9,6 +9,7 @@ public class Lab2P2_JafetHou {
 
    static Scanner lea = new Scanner (System.in);
    static Scanner leer = new Scanner (System.in);
+   public static int tipo = 0;
    
     public static void main(String[] args) throws ParseException {
         
@@ -18,14 +19,12 @@ public class Lab2P2_JafetHou {
         usuario.add(new accesso("xirui","profex10",2));
         usuario.add(new accesso("papa","contra1234",3));
         
-        int tipo = 0;
-        login(usuario,tipo);
-        
         boolean seguir = true;
+        int TipoUsuario = login(usuario,tipo);
         
         while(seguir){
         
-            switch(tipo){
+            switch(TipoUsuario){
 
                 case 0:{
 
@@ -36,7 +35,26 @@ public class Lab2P2_JafetHou {
                 }
                 case 1:{
 
-                    System.out.println("funsiona");
+                    System.out.println("--Menu de Estudiante--");
+                    System.out.println("1) Listar Recursos");
+                    System.out.println("2) salir");
+                    
+                    int opcion = lea.nextInt();
+                    
+                    if(opcion == 1){
+                        
+                    }else{
+                        seguir = false;
+                    }
+                    
+                    break;
+                }
+                case 2:{
+                    
+                    break;
+                }
+                case 3:{
+                    
                     break;
                 }
             }
