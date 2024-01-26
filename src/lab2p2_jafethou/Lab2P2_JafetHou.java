@@ -16,8 +16,8 @@ public class Lab2P2_JafetHou {
         ArrayList <accesso> usuario  = new ArrayList();
         
         usuario.add(new accesso("hou","Hou1975",1));
-        usuario.add(new accesso("xirui","profex10",2));
-        usuario.add(new accesso("papa","contra1234",3));
+        usuario.add(new accesso("profe","profex10",2));
+        usuario.add(new accesso("jose","contra1234",3));
         
         boolean seguir = true;
         int TipoUsuario = login(usuario,tipo);
@@ -37,11 +37,16 @@ public class Lab2P2_JafetHou {
 
                     System.out.println("--Menu de Estudiante--");
                     System.out.println("1) Listar Recursos");
-                    System.out.println("2) salir");
+                    System.out.println("2) Cerrar sesion");
+                    System.out.println("3) salir");
                     
                     int opcion = lea.nextInt();
                     
                     if(opcion == 1){
+                        
+                    }else if(opcion == 2){
+                        
+                        TipoUsuario = login(usuario,tipo);
                         
                     }else{
                         seguir = false;
@@ -50,6 +55,36 @@ public class Lab2P2_JafetHou {
                     break;
                 }
                 case 2:{
+                    
+                    System.out.println("--Menu de Professor--");
+                    System.out.println("1) Listar Recursos");
+                    System.out.println("2) Crear Recurso");
+                    System.out.println("3) Cerrar sesion");
+                    System.out.println("4) salir");
+                    
+                    int opcion = lea.nextInt();
+                    
+                    switch(opcion){
+                        
+                        case 1:{
+                            
+                            break;
+                        }
+                        case 2:{
+                            
+                            break;
+                        }
+                        case 3:{
+                            
+                            TipoUsuario = login(usuario,tipo);
+                            
+                            break;
+                        }
+                        case 4:{
+                            seguir = false;
+                            break;
+                        }
+                    }
                     
                     break;
                 }
