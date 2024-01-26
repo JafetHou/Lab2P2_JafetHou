@@ -127,7 +127,7 @@ public class Lab2P2_JafetHou {
                             break;
                         }
                         case 4:{
-                            
+                            modificar(biblioteca);
                             break;
                         }
                         case 5:{
@@ -271,12 +271,97 @@ public class Lab2P2_JafetHou {
         System.out.println("Ingrese el numero del Libro, Articulo, Curso en linea, o Conferencia virtual a eliminar: ");
         int num = lea.nextInt();
 
-        if(num < biblioteca.size()){
+        if(num <= biblioteca.size()){
             
             biblioteca.remove(num-1);
             System.out.println(" eliminado de la biblioteca");
 
         }
+    }
+    public static void modificar(ArrayList <Object> biblioteca){
+        
+        int i =1;
+        for (Object s : biblioteca) {
+            
+            System.out.println(i+") "+s.toString());
+            i=i+1;
+        }
+        System.out.println("Ingrese el numero del Libro, Articulo, Curso en linea, o Conferencia virtual a modificar: ");
+        int num = lea.nextInt();
+
+        if(num <= biblioteca.size()){
+            if(biblioteca.get(num-1) instanceof Libro){
+                
+                System.out.println("Ingrese el titulo: ");
+                String titulo = scanner.nextLine();
+                
+                System.out.println("Ingrese autor: ");
+                String autor = scanner.nextLine();
+                
+                System.out.println("Ingrese genero del libro: ");
+                String genero = scanner.nextLine();
+                
+                System.out.println("Ingrese anio de publicacion: ");
+                int anio = lea.nextInt();
+                
+                biblioteca.set(num-1, (Libro) new Libro(titulo, autor, genero, anio, "si"));
+                
+            }else if(biblioteca.get(num-1) instanceof Articulo){
+                
+                System.out.println("Ingrese el titulo: ");
+                String titulo = scanner.nextLine();
+                
+                System.out.println("Ingrese autor: ");
+                String autor = scanner.nextLine();
+                
+                System.out.println("Ingrese tema del articulo: ");
+                String tema = scanner.nextLine();
+                
+                System.out.println("Ingrese la fecha de publicacion: ");
+                String fecha = scanner.nextLine();
+                
+                biblioteca.set(num-1,(Articulo) new Articulo(titulo, autor, tema, fecha, "si"));
+                
+            }else if(biblioteca.get(num-1) instanceof Cursos){
+                
+                System.out.println("Ingrese el titulo: ");
+                String titulo = scanner.nextLine();
+                
+                System.out.println("Ingrese el instructor: ");
+                String instructor = scanner.nextLine();
+                
+                System.out.println("Ingrese la duracion en semanas: ");
+                int semanas = leer.nextInt();
+                
+                System.out.println("Ingrese la plataforma de ensenanza: ");
+                String plataforma = scanner.nextLine();
+                
+                biblioteca.set(num-1,(Cursos) new Cursos(titulo, instructor, semanas, plataforma));
+                
+            }else if(biblioteca.get(num-1) instanceof Conferencia){
+                
+                System.out.println("Ingrese el titulo: ");
+                String titulo = scanner.nextLine();
+                
+                System.out.println("Ingrese el conferensista: ");
+                String conferensista = scanner.nextLine();
+                
+                System.out.println("Ingrese la fecha de conferencia: ");
+                String fecha = scanner.nextLine();
+                
+                System.out.println("Ingrese la duracion: ");
+                String duracion = scanner.nextLine();
+                
+                System.out.println("Ingrese el enlace de accesso: ");
+                String enlace = scanner.nextLine();
+                
+                biblioteca.set(num-1,(Conferencia) new Conferencia(titulo, conferensista, fecha, duracion, enlace));
+                
+            }
+            System.out.println("Ingrese que desea modificar: ");
+
+        }
+        
     }
     
     
